@@ -8,7 +8,7 @@ angular.module('nbackApp')
 
     var game = $scope.game;
 
-    $scope.game.config = {
+    game.config = {
       dimX : 3,
       dimY : 3,
       sequenceLength : 2,
@@ -17,12 +17,12 @@ angular.module('nbackApp')
     };
 
     //define Tile class
-    $scope.game.Tile = function(){
+    game.Tile = function(){
       this.state = false;
     };
 
     //define Board class
-    $scope.game.Board = function(x, y){
+    game.Board = function(x, y){
       this.x = x;
       this.y = y;
       this.board = [];
@@ -33,6 +33,15 @@ angular.module('nbackApp')
         }
       }
     };
+
+    //reset all tiles to off
+    game.Board.prototype.reset = function(){
+
+    };
+
+    //select a random tile
+
+    //turn a tile on
 
     //create board
     $scope.game.board = new game.Board(3, 3);
@@ -59,4 +68,4 @@ angular.module('nbackApp')
       //user input match
         //success
         //fail
-    });
+  });

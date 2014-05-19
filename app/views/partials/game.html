@@ -1,8 +1,7 @@
 <div class="game" ng-controller="GameCtrl">
-  <table class = "board">
-    <tr ng-repeat="row in game.board.board">
-      <td ng-repeat="item in row">
-        <p>This is a table cell</p>
+  <table class="board">
+    <tr class="board-row" ng-repeat="row in game.board.board">
+      <td class="board-tile" ng-repeat="item in row">
       </td>
     </tr>
   </table>
