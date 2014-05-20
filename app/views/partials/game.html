@@ -1,7 +1,7 @@
 <div class="game" ng-controller="GameCtrl">
   <table class="board">
     <tr class="board-row" ng-repeat="row in game.board.board">
-      <td class="board-tile" ng-repeat="item in row">
+      <td class="board-tile" ng-class="{'active': item.active, 'inactive': !item.active}" ng-repeat="item in row">
       </td>
     </tr>
   </table>

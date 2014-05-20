@@ -85,6 +85,7 @@ body {
 .board {
   width: 600px;
   height: 600px;
+  margin:auto;
 }
 
 .board-tile {
@@ -95,14 +96,15 @@ body {
   border: 5px;
   border-color:red;
   border-style:solid;
-  background-color: blue;
 }
 
-.board-tile p {
-  color: blue;
+.active {
+  background-color:blue;
 }
 
-
+.inactive {
+  background-color:gray;
+}
 
 
 
