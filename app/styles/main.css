@@ -103,7 +103,7 @@ body {
   border-style:solid;
 }
 
-.active {
+.active-tile {
   background-color:#1ABC9C;
   -webkit-animation: fadein 2.5s;
   opacity:0;
@@ -123,32 +123,29 @@ body {
   }
 }
 
-.inactive {
+.inactive-tile {
 }
 
-
-/*.main {
-  width:200px;
-  height:200px;
-  background-color:#1ABC9C;
-  -webkit-animation: fadein 2.5s;
-  opacity:0;
+.icon-table {
+  width: 240px;
+  height: 240px;
+  margin:auto;
+  margin-top:10px;
+  margin-bottom:10px;
+  padding:10px;
+  background-color:#ECF0F1;
 }
 
-@-webkit-keyframes fadein {
-  0% {
-    opacity:0;
-  }
-
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
+.icon-tile {
+  width: 80px;
+  height: 80px;
+  margin: 0px;
+  padding:0px;
+  border: 5px;
+  border-color:#BDC3C7;
+  border-style:solid;
 }
-*/
 
-
+.icon-active {
+  background-color: #1ABC9C;
+}

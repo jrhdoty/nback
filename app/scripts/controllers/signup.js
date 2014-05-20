@@ -16,7 +16,7 @@ angular.module('nbackApp')
         })
         .then( function() {
           // Account created, redirect to home
-          $location.path('/');
+          $location.path('/nback');
         })
         .catch( function(err) {
           err = err.data;
