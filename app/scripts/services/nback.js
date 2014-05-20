@@ -82,6 +82,8 @@ angular.module('nbackApp')
     //play a full game
     Game.prototype.play = function(gameLength){
       var self = this;
+      self.board.reset();
+      self.finishedGame = false;
       console.log('gameLength is: ', gameLength);
 
       //play one seq item
@@ -96,14 +98,15 @@ angular.module('nbackApp')
         if(self.seq.match(self.n) && self.playerGuessed === false){
           self.scores.missedGuesses++;
         }
+        self.playerGuessed = false;
         nextRound();
         //hack to update finished gameState
-        if(self.seq.seq.length === self.n+gameLength-1){
+        if(self.seq.seq.length === self.n+gameLength){
           self.finishedGame = true;
           console.log('Finished Game');
+          self.board.reset();
         }
-        console.log(self.finishedGame);
-      }, 2000, this.n+gameLength);
+      }, 2500, this.n+gameLength);
 
     };
 
