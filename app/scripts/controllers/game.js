@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('nbackApp')
-  .controller('GameCtrl', function ($scope) {
+  .controller('GameCtrl', function ($scope, $interval) {
     console.log('Hit Game Controller');
     //setup the dimensions of the game
     $scope.game = {};
@@ -18,7 +18,7 @@ angular.module('nbackApp')
 
     //define Tile class
     game.Tile = function(){
-      this.state = false;
+      this.active = false;
     };
 
     //define Board class
@@ -36,15 +36,61 @@ angular.module('nbackApp')
 
     //reset all tiles to off
     game.Board.prototype.reset = function(){
-
+      _.each(this.board, function(row){
+        _.each(row, function(tile){
+          tile.active = false;
+        });
+      });
     };
 
     //select a random tile
+    game.Board.prototype.getRandomTile = function(){
+      var i = Math.floor(Math.random()*this.board.length);
+      var j = Math.floor(Math.random()*this.board[0].length);
+      return this.board[i][j];
+    };
 
-    //turn a tile on
+    //turn a random tile on
+    game.Board.prototype.activateRandomTile = function(){
+      var tile = this.getRandomTile();
+        tile.active = true;
+    };
+
+    //define sequence class
+    game.Sequence = function(){
+      this.seq = [];
+    };
+
+    game.Sequence.prototype.add = function(val){
+      this.seq.push(val);
+    };
+
+    game.Sequence.prototype.match = function(n){
+      if (this.seq.length < n+1){
+        return false;
+      }
+      if(this.seq[this.seq.length-1] === this.seq[this.seq.length-(1+n)]){
+        return true;
+      }
+      return false;
+    };
+
+    //define Game class
+    game.Game = function(board){
+      this.board = board;
+    };
+
+    game.Game.prototype.play = function(n){
+
+    };
 
     //create board
-    $scope.game.board = new game.Board(3, 3);
+    game.board = new game.Board(3, 3);
+    // game.board.reset();    
+
+
+    //for the game loop use $interval
+    //angular native loop
 
     //play function
     //stop
