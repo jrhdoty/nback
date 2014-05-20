@@ -1,9 +1,10 @@
 <div class="game" ng-controller="GameCtrl">
+  <button type="button" class="btn btn-success" ng-click="nBack.play(game.config.gameLength)">Play</button>
+  <button type="button" class="btn btn-success" ng-click="nBack.guess()">Match</button>
   <table class="board">
     <tr class="board-row" ng-repeat="row in game.board.board">
       <td class="board-tile" ng-class="{'active': item.active, 'inactive': !item.active}" ng-repeat="item in row">
       </td>
     </tr>
   </table>
-
 </div>
