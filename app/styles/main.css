@@ -105,7 +105,8 @@ body {
 
 .active {
   background-color:#1ABC9C;
-  -webkit-animation: fadein 2s;
+  -webkit-animation: fadein 2.5s;
+  opacity:0;
 }
 
 @-webkit-keyframes fadein {
@@ -126,7 +127,28 @@ body {
 }
 
 
+/*.main {
+  width:200px;
+  height:200px;
+  background-color:#1ABC9C;
+  -webkit-animation: fadein 2.5s;
+  opacity:0;
+}
+
+@-webkit-keyframes fadein {
+  0% {
+    opacity:0;
+  }
 
 
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+*/
 
 
