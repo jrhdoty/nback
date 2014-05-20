@@ -6,3 +6,4 @@ angular.module('nbackApp')
     $scope.game = nBack.game;
     console.log($scope.game.scores);
   });
+
