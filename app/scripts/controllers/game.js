@@ -54,6 +54,7 @@ angular.module('nbackApp')
     game.Board.prototype.activateRandomTile = function(){
       var tile = this.getRandomTile();
         tile.active = true;
+        return tile;
     };
 
     //define sequence class
@@ -80,12 +81,27 @@ angular.module('nbackApp')
       this.board = board;
     };
 
-    game.Game.prototype.play = function(n){
+    game.Game.prototype.play = function(n, gameLength){
+      var self = this;
+      var seq = new game.Sequence();
+
+
+      var nextRound = function(){
+        self.board.reset();
+        seq.add(self.board.activateRandomTile());
+        console.log(seq.match(n));
+      };
+
+      $interval(function(){
+        nextRound();
+      }, 2000, n+gameLength);
 
     };
 
     //create board
     game.board = new game.Board(3, 3);
+    var g = new game.Game(game.board);
+    g.play(2, 20);
     // game.board.reset();    
 
 
