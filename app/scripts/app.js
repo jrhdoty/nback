@@ -25,6 +25,11 @@ angular.module('nbackApp', [
         controller: 'MainCtrl',
         authenticat: true
       })
+      .when('/stats', {
+        templateUrl: 'partials/stats',
+        controller: 'StatsCtrl',
+        authenticate: true
+      })
       .when('/settings', {
         templateUrl: 'partials/settings',
         controller: 'SettingsCtrl',
