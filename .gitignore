@@ -6,3 +6,7 @@ app/bower_components
 heroku
 /views
 dist
+.DS_Store
+app/.DS_Store
+app/scripts/.DS_Store
+app/scripts/controllers/.DS_Store

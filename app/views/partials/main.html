@@ -16,9 +16,11 @@
   </div>
 </div> -->
 
-<div ng-include="'partials/nback.html'">
-</div>
+<div ng-include="'partials/nback.html'" ng-show="!showScore"></div>
+<div ng-include="'partials/score.html'" ng-show="showScore"></div>
+
 
 <div class="footer">
   <p>♥ from the Yeoman team</p>
+</div>
 </div>

@@ -100,7 +100,7 @@ angular.module('nbackApp')
         //hack to update finished gameState
         if(self.seq.seq.length === self.n+gameLength-1){
           self.finishedGame = true;
-          console.log("Finished Game");
+          console.log('Finished Game');
         }
         console.log(self.finishedGame);
       }, 2000, this.n+gameLength);
@@ -131,7 +131,7 @@ angular.module('nbackApp')
     };
 
     return gameState;
-});
+  });
 
 
 

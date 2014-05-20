@@ -4,9 +4,6 @@ body {
   padding-bottom: 20px;
 }
 
-.board-tile p {
-  color:blue;
-}
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -112,15 +109,18 @@ body {
 }
 
 @-webkit-keyframes fadein {
-  from: {
+  0% {
     opacity:0;
   }
 
-  to: {
+  50% {
     opacity: 1;
   }
-}
 
+  100% {
+    opacity: 0;
+  }
+}
 
 .inactive {
 }
