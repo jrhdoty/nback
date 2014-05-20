@@ -90,7 +90,6 @@ angular.module('nbackApp')
     game.Game.prototype.play = function(gameLength){
       var self = this;
       console.log('gameLength is: ', gameLength);
-      var self = this;
 
       var nextRound = function(){
         self.board.reset();
@@ -102,7 +101,7 @@ angular.module('nbackApp')
         if(self.seq.match(self.n) && self.playerGuessed === false){
           self.missedGuesses++;
         }
-        nextRound();       
+        nextRound();
       }, 2000, this.n+gameLength);
     };
 

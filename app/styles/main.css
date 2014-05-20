@@ -82,10 +82,18 @@ body {
   }
 }
 
+.game {
+  text-align:center;
+}
+
 .board {
   width: 510px;
   height: 510px;
   margin:auto;
+  margin-top:10px;
+  margin-bottom:10px;
+  padding:10px;
+  background-color:#ECF0F1;
 }
 
 .board-tile {
@@ -94,16 +102,27 @@ body {
   margin: 0px;
   padding:0px;
   border: 5px;
-  border-color:red;
+  border-color:#BDC3C7;
   border-style:solid;
 }
 
 .active {
-  background-color:blue;
+  background-color:#1ABC9C;
+  -webkit-animation: fadein 2s;
 }
 
+@-webkit-keyframes fadein {
+  from: {
+    opacity:0;
+  }
+
+  to: {
+    opacity: 1;
+  }
+}
+
+
 .inactive {
-  background-color:gray;
 }
 
 
