@@ -1,0 +1,23 @@
+{
+  "name": "nback",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jrhdoty/nback",
+  "authors": [
+    "John Doty <jrhdoty@gmail.com>"
+  ],
+  "description": "nback brain trainer written in angular",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.23",
+    "angular-ui-router": "~0.2.10"
+  }
+}
