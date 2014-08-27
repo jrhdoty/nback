@@ -1,0 +1,30 @@
+{
+  "name": "nback",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "^1.21.4",
+    "chai": "^1.9.1",
+    "karma": "^0.12.22",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-mocha": "^0.1.9"
+  },
+  "scripts": {
+    "test": "karma start",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jrhdoty/nback.git"
+  },
+  "author": "John Doty <jrhdoty@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jrhdoty/nback/issues"
+  },
+  "homepage": "https://github.com/jrhdoty/nback"
+}
