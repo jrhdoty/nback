@@ -1,6 +1,6 @@
 'use strict';
 angular.module('nback', [])
-.factory('GameService', function(GridService){
+.factory('GameService', function(GridService, $timeout){
   var game = {};
 
   //grid dimensions
@@ -49,7 +49,7 @@ angular.module('nback', [])
   };
 
   game.move = function(key){
-    
+
   };
 
   game.endGame = function(){
