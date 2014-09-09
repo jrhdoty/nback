@@ -12,11 +12,14 @@ module.exports = function(config) {
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['mocha', 'chai'],
 
+    //plugins
+    plugins: ['karma-mocha', 'karma-chai', 'karma-chrome-launcher'],
 
     // list of files / patterns to load in the browser
     files: [
       'app/bower_components/angular/angular.min.js',
       'app/bower_components/angular-ui-router/release/angular-ui-router.min.js',
+      'app/bower_components/angular-mocks/angular-mocks.js',
       'app/scripts/**/*.js',
     ],
 
@@ -50,6 +53,7 @@ module.exports = function(config) {
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
     logLevel: config.LOG_INFO,
 
+    loggers: [{type: 'console'}],
 
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
