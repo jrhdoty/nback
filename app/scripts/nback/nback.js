@@ -23,32 +23,42 @@ angular.module('nback', [])
     return num;
   };
 
+  var initializeSeries = function(m){
+    var series = [];
+    for ( var i = 0; i < m; i++ ){
+      series.push([]);
+    }
+    return series;
+  };
+
   game.startGame = function(ticks, n, m, interval){
     runGame = true;
     ticks = ticks       || _ticks;
     n =  n              || _n;
     m = m               || _m;
     interval = interval || _interval;
-    var series = [];
+    var series = initializeSeries(m);
     var x, y;
+    var that = this;
 
     var gameTick = function(){
       if( ticks-- && runGame){
         GridService.reset();
-        x = selectRandom(dimX);
-        y = selectRandom(dimY);
-
-        series.push({x:x, y:y});
-        GridService.activate(x, y);
-        tickIds.push(setInterval(gameTick, interval));
+        for ( var i = 0; i < m; i++ ){
+          x = selectRandom(dimX);
+          y = selectRandom(dimY);
+          series[i].push({x:x, y:y});
+          GridService.activate(i, x, y);
+        }
+        tickIds.push($timeout(gameTick, interval));
       } else {
-        this.endGame();
+        that.endGame();
       }
     };
     gameTick();
   };
 
-  game.move = function(key){
+  game.move = function(m, val){
 
   };
 
@@ -57,8 +67,8 @@ angular.module('nback', [])
     if (!runGame) return; // game was not running
 
     runGame = false;
-    tickIds.forEach(function(id){
-      clearTimeout(id);
+    tickIds.forEach(function(tick){
+      $timeout.cancel(tick);
     });
     tickIds = []; //reset tickIds array
   };
