@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('nbackApp', ['ui.router'])
+angular.module('nBackApp', ['ui.router'])
   .config(function($stateProvider){
     $stateProvider
     .state('index', {  
